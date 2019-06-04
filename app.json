@@ -1,7 +1,8 @@
 {
   "pages": [
-    "page/component/login/login",
     "page/component/index",
+    "page/component/login/login",
+    
     "page/component/more2/more2",
     "page/component/issue/issue",
     "page/component/person/person",
