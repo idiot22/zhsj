@@ -1,6 +1,19 @@
+@import "icon.wxss";
+@import "iconfont.wxss";
+@import "colorui.wxss";
+@import "weui.wxss";
+@import "animation.wxss";
+
+
 page {
   background-color: #fbf9fe;
   height: 100%;
+    font-size: 32rpx;
+
+}
+text
+{
+    font-family: 'Source Han Serif SC';
 }
 .container {
   display: flex;
@@ -158,20 +171,24 @@ page {
     text-align: center;
 }
 
-.page input{
+/* .page input{
     padding: 10px 15px;
     background-color: #fff;
-}
+} */
 checkbox, radio{
     margin-right: 5px;
 }
 
 .btn-area{
     padding: 0 15px;
+    display:flex;
+
 }
 .btn-area button{
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 300rpx;
+    font-size: 16px
 }
 
 .page {

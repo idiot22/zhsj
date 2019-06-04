@@ -1,0 +1,45 @@
+.wux-cell__ft
+{
+  color: black
+}
+.aa
+{
+
+margin:0;
+border-radius:0;
+color:inherit!important;
+background:white;
+font-size:inherit;
+line-height:inherit;
+text-align:inherit;
+padding:20rpx 30rpx;
+position:relative;
+display:-ms-flexbox;
+display:flex;
+-ms-flex-align:center;
+align-items:center;
+background:#fff;
+
+}
+.login-icon .word
+{
+  font-size: 15pt;
+  letter-spacing: 10rpx;
+  color: #fff;
+  font-family: PingFang SC Medium;
+  text-align: center;
+ 
+}
+.login-icon
+{
+  margin: 0 auto;
+  margin-top: 120rpx;
+  padding-top:10rpx;
+  width: 400rpx;
+  height:90rpx;
+  background-color: #00C5BC;
+  color: white;
+  border-radius:50rpx;
+  box-shadow: 0px 14rpx 15rpx 0px rgba(51,145,255,0.2);
+
+}

@@ -1,0 +1,60 @@
+<view class='input-wrapper'> 
+    <view class='radio-wrapper'>
+      <text >作品类型</text>
+        <i-panel title="group-水果">
+            <i-checkbox-group current="{{current}}" bindchange="handleFruitChange">
+                <i-checkbox wx:for="{{fruit}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+                </i-checkbox>
+            </i-checkbox-group>
+        </i-panel>
+    </view>
+  <i-panel>
+      <i-input i-class="zp-name"value="{{ value1 }}" autofocus placeholder="请输入作品的标题" />
+
+      <i-input
+       value="{{ value2 }}"
+       type="textarea"
+       i-class="direction"
+       placeholder="请输入作品的描述，不少于100字" />
+  </i-panel>
+
+    <view class='radio-wrapper'>
+      <text >上传类型</text>
+        <i-radio-group current="{{current}}" bindchange="handleFruitChange">
+          <i-radio i-class='radio{{item.id}}' wx:for="{{uploadType}}" value="{{item.name}}" wx:key="{{item.id}}">
+          </i-radio>
+        </i-radio-group>
+    </view>
+
+
+
+
+      <!--上传图片-->
+      <view class='upload-img'>
+          <view class='title'>
+            <text style="font-size:14px">上传图片</text>
+            <text class='num'>{{uploadNum}}/9</text>
+          </view>
+          <view class='img-wrapper' wx:for='{{uploadList}}' wx:key='{{index}}'>
+            <view class='add-img  show-wrapper'>
+              <image style="width:20px;height:20px"class='del_icon' bindtap='clearImg' data-index="{{index}}" src="../../../image/comment/del.png"></image>
+              <image style='width:100%;height:100%;border-radius:8px;'bindtap='' data-index="{{index}}" src='{{item}}'></image>
+            </view>
+          </view>
+          <view class='img-wrapper' wx:if='{{showUpload}}'>
+            <view class='add-img' bindtap='uploadImg'>
+              <image src='../../../image/comment/图片.png'></image>
+              <text>图片</text>
+            </view>
+          </view>
+          <view style='clear:both'></view>
+      </view>
+      <!--/上传图片-->
+
+
+      <!--提交-->
+      <view class='submit'>
+        <button class='btn' bindtap='submit'>提交</button>
+      </view>
+      <!--/提交-->
+</view>

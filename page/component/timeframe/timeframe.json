@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+      "navigationBarTextStyle": "white",
+      "navigationBarTitleText": "课程表",
+      "navigationBarBackgroundColor": "#00c5bc",
+      "onReachBottomDistance": 60,
+      "backgroundColor": "#eeeeee",
+      "enablePullDownRefresh": true
+}

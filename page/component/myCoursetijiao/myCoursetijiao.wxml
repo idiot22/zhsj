@@ -1,0 +1,33 @@
+<image class="toutu" mode="aspectFill" src='{{toutu}}'>
+</image>
+<wux-sticky scrollTop="{{scrollTop}}">
+  <wux-sticky-item>
+    <view slot="title">
+      <scroll-view scroll-x class="bg-white nav" scroll-with-animation="{{true}}">
+        <view class='flex text-center '>
+          <view class="cu-item flex-sub {{index==TabCur?'text-mars cur':''}}" wx:for="{{course_tab}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+            {{item}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </wux-sticky-item>
+  <!--报名新课-->
+<view style="position:relative;top:15px;margin-top:350rpx}}" wx:for="{{myCourse}}" wx:key  >
+  <navigator url="/page/component/works/works?courseId={{item.courseId}}">
+      <block >
+      <van-card 
+        title="{{item.courseName}}"
+        thumb="{{item.courseImgUrl}}"
+        bindtap='toCourseXQ' data-courseid = '{{item.courseId}}'
+      >
+        <view slot="tags" >
+             <van-tag ><view style='display:inline'class='tag_info' role=""aria-label="">{{item.gradeId}}年级</view></van-tag>
+            <view>{{item.subjectMission}}</view> 
+        </view>
+
+      </van-card>
+      </block>
+        </navigator>
+     </view>
+</wux-sticky>

@@ -1,97 +1,254 @@
-<view class="main">
-    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+<!-- <van-notice-bar
+  text="欢迎使用综合实践数据平台，在这里您能更好地管理课程与活动"
+/> -->
+<view class="main" style='background-color:#F2F2F2;padding-bottom:40rpx'>
+
+     <view style='position: fixed;top: 0px;left: 0;width: 100%;z-index: 999'>
+          <van-search
+            value="{{ value }}"
+            placeholder="请输入搜索关键词"
+            use-action-slot
+            bind:change="onChange"
+            bind:search="onSearch"
+            bind:focus = "toPageMore"
+          >
+            <view slot="action" bindtap="onSearch" >搜索</view>
+          </van-search>
+       </view>
+<view class='banner' style='position:relative;margin-top:90rpx'>
+    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true" class='imgsilder' >
         <block wx:for="{{imgUrls}}" wx:key="{{index}}">
             <swiper-item>
-                <image src="{{item}}" class="slide-image" width="100%"/>
+                <image  src="{{item}}" class="slide-image" />
             </swiper-item>
         </block>
     </swiper>
-    <view class="selected">
-        <view class="select-title"><text>精选主题</text></view>
-        <view class="select-top">
-            <view class="select-top-small">
-                <navigator url="list/list">
-                    <image src="/image/s1.png"></image>
-                </navigator>
-            </view>
-            <view class="select-top-small">
-                <navigator url="list/list">
-                    <image src="/image/s2.png"></image>
-                </navigator>
-            </view>
-        </view>
-        <view class="select-bottom">
-            <navigator url="list/list">
-                <image src="/image/s3.png"></image>
-            </navigator>
-        </view>
+
     </view>
-    <view class="newest">
-        <view class="newest-title"><text>最近新品</text></view>
-        <view class="newest-box">
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s4.png"></image>
-                    <view class="newest-text"><text>瓜子 100g</text></view>
-                    <view class="newest-text"><text>￥ 0.01</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s5.png"></image>
-                    <view class="newest-text"><text>芹菜 半斤</text></view>
-                    <view class="newest-text"><text>￥ 0.02</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s6.png"></image>
-                    <view class="newest-text"><text>素米 375g</text></view>
-                    <view class="newest-text"><text>￥ 0.03</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s4.png"></image>
-                    <view class="newest-text"><text>瓜子 100g</text></view>
-                    <view class="newest-text"><text>￥ 0.01</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s5.png"></image>
-                    <view class="newest-text"><text>芹菜 半斤</text></view>
-                    <view class="newest-text"><text>￥ 0.02</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s6.png"></image>
-                    <view class="newest-text"><text>素米 375g</text></view>
-                    <view class="newest-text"><text>￥ 0.03</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s4.png"></image>
-                    <view class="newest-text"><text>瓜子 100g</text></view>
-                    <view class="newest-text"><text>￥ 0.01</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s5.png"></image>
-                    <view class="newest-text"><text>芹菜 半斤</text></view>
-                    <view class="newest-text"><text>￥ 0.02</text></view>
-                </navigator>
-            </view>
-            <view class="newest-list">
-                <navigator url="details/details">
-                    <image src="/image/s6.png"></image>
-                    <view class="newest-text"><text>素米 375g</text></view>
-                    <view class="newest-text"><text>￥ 0.03</text></view>
-                </navigator>
-            </view>
-        </view>
-    </view>
+    
+<!--宫格列表-->
+
+  
+<view class="cu-list grid col-3 no-border"role=""aria-label="" style='padding-left:30rpx;padding-right:30rpx;text-align:center'>
+
+<view class="cu-item"role=""aria-label=""  style='width:20%' wx:key wx:for="{{grid}}">
+  <navigator class='content' url='{{item.url}}' hover-class='none'>
+<view class="cu-tag badge"role=""aria-label="" wx:if="{{item.iftag==true}}">{{item.info_num}}</view>
+
+
+<!-- <view class="icon-shangcheng1-copy" style='color:#1afa29'role=""aria-label=""> -->
+<image src='{{item.icon}}' style='margin:0 auto;width:85rpx;height:70rpx;'></image>
+<!-- </view> -->
+<text style='margin:0 auto;line-height:22rpx;text-align:center;width:113rpx'>
+{{item.text}}
+</text>
+</navigator>
 </view>
+</view>
+ <view class="newest" >
+<!--卡片-->
+<!-- 把内容数据放到json数组里头 -->
+<view class="cu-item"role=""aria-label="" style='padding:10rpx'>
+<view class="content"role=""aria-label="" >
+
+      <text class='text-black' style='font-size:16px;margin-left:15rpx;'>我的课程</text>
+</view>
+</view>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" 
+style="{{swiperheight}}"
+stindicator-dots="true" circular="true"  indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <!-- <block wx:for="{{imgUrls02}}" wx:keys="{{index}}"> -->
+  
+<swiper-item    wx:key  wx:for="{{mycourse}}" bindtap='toCourseXQ' data-courseid = '{{item.courseId}}' data-mycourse='true'>
+<view class="cu-card case {{isCard?'no-card':''}}" style='width:100%'>
+  <view  wx:key class="cu-item shadow">
+    <view class='image'  >
+      <image src="{{item.courseImg}}" mode="widthFix" class="longimage">
+      </image>
+      <!-- <view class="cu-tag bg-blue">{{item.flag}}</view> -->
+      <view class='cu-bar bg-shadeBottom'>{{item.course}}</view>
+    </view>
+     <view class='content flex-sub'>
+      <view class="t-info" style='display:flex;width:100%;height:auto'>
+        <!-- <view class="cu-avatar round lg" style="background-image">
+         <image src="{{item.t_img}}" ></image>
+        </view> -->
+            <view class='text-black' style='vertical-align:middle;font-size:12px;margin-top:8rpx'>{{item.day}}
+
+ 
+              <text style='font-size:11px;'>{{item.time}}</text>
+            </view>
+        
+
+        </view>
+        <view class='content flex-sub'>
+       
+          <view class='text-black text-sm flex justify-between'>
+            <!-- {{item.day}} -->
+            <view class="text-cyan">
+              <text class="icon-attentionfill" style='font-weight:bold'>{{item.flag}}</text>
+              <!-- <text class="icon-appreciatefill"></text> 20
+              <text class="icon-messagefill"></text> 30 -->
+            <!-- </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  </view>
+  </swiper-item>
+
+
+
+  <!-- </block> -->
+</swiper>
+   <view class="divLine"></view>
+     <!-- 分割线 -->
+ 
+<!--报名新课-->
+<view class='tag_word' >
+ <text>课程报名</text>
+</view>
+<block wx:for="{{kcbaoming}}" wx:key wx:if = "{{index<3}}">
+<van-card 
+  price="{{item.price}}"
+  title="{{item.course}}"
+  num="最新课程"
+  thumb="{{item.courseImg}}"
+  origin-price="4000"
+   bindtap='toCourseXQ' data-courseid = '{{item.courseId}}' data-mycourse='false'
+>
+
+  <view slot="tags" style='display:flex'>
+  
+        <van-tag><view class='tag_info' role=""aria-label="">8-14岁</view>
+</van-tag>
+  <van-tag><view class='tag_info' role=""aria-label="">2018-04-03报名</view>
+</van-tag>
+       
+      </view>
+
+</van-card>
+</block>
+<view style='margin:0 auto;margin-top:60rpx;width:300rpx;' bindtap='gomore'>
+<van-button style='margin:0 auto;border-radius:20px;border:2rpx #a29b9b；font-family:Source Han Serif SCS'>查看更多课程</van-button>
+</view>
+
+
+</view>
+
+<!-- 活动 -->
+<view class="newest" >
+<!--卡片-->
+<!-- 把内容数据放到json数组里头 -->
+<view class="cu-item"role=""aria-label="" style='padding:10rpx'>
+<view class="content"role=""aria-label="" >
+
+      <text class='text-black' style='font-size:16px;margin-left:15rpx;'>我的活动</text>
+</view>
+</view>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" 
+style="{{swiperheight}}"
+stindicator-dots="true" circular="true"  indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <!-- <block wx:for="{{imgUrls02}}" wx:keys="{{index}}"> -->
+  
+<swiper-item    wx:key  wx:for="{{myactivity}}">
+<view class="cu-card case {{isCard?'no-card':''}}" style='width:100%'>
+  <view  wx:key class="cu-item shadow">
+    <view class='image'  >
+      <image src="{{item.activityImg}}" mode="widthFix" class='longimage'>
+      </image>
+      <!-- <view class="cu-tag bg-blue">{{item.flag}}</view> -->
+      <view class='cu-bar bg-shadeBottom'>{{item.activity}}</view>
+    </view>
+     <view class='content flex-sub'>
+      <view class="t-info" style='display:flex;width:100%;height:auto'>
+        <!-- <view class="cu-avatar round lg" style="background-image">
+         <image src="{{item.t_img}}" ></image>
+        </view> -->
+           <view class='text-black' style='vertical-align:middle;font-size:12px;margin-top:8rpx'>{{item.day}}
+
+ 
+              <text style='font-size:11px;'>{{item.time}}</text>
+            </view>
+        
+
+        </view>
+        <view class='content flex-sub'>
+       
+          <view class='text-black text-sm flex justify-between'>
+            <!-- {{item.day}} -->
+            <view class="text-cyan">
+              <text class="icon-attentionfill" style='font-weight:bold'>{{item.flag}}</text>
+              <!-- <text class="icon-appreciatefill"></text> 20
+              <text class="icon-messagefill"></text> 30 -->
+            <!-- </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  </view>
+  </swiper-item>
+
+
+
+  <!-- </block> -->
+</swiper>
+   <view class="divLine"></view>
+     <!-- 分割线 -->
+ 
+<!--报名新课-->
+<view class='tag_word' >
+ <text>活动报名</text>
+</view>
+<block wx:for="{{hdbaoming}}" wx:key>
+
+<van-card class='aa'
+  price="{{item.price}}"
+  title="{{item.course}}"
+  num="最新活动"
+  thumb="{{item.courseImg}}"
+  origin-price="8000"
+>
+
+  <view slot="tags" style='display:flex'>
+  
+        <van-tag><view class='tag_info' role=""aria-label="">8-14岁</view>
+</van-tag>
+  <van-tag><view class='tag_info' role=""aria-label="">2018-04-03报名</view>
+</van-tag>
+       
+      </view>
+ 
+</van-card>
+</block>
+<view style='margin:0 auto;margin-top:60rpx;width:300rpx;font-family:Source Han Serif SCS'>
+  <navigator url="/page/component/more/more"> <van-button  style='margin:0 auto;border-radius:28px;border:2rpx #a29b9b；font-family:Source Han Serif SCS'>查看更多活动</van-button></navigator>
+</view>
+
+
+</view>
+<view class='inform'>
+
+<!-- <text style='color:red;margin-left:20rpx'>通知</text> -->
+<van-panel title="最新通知"  status="最近一周"  >
+
+<block wx:key wx:for="{{inform}}">
+  <van-cell 
+    title="{{item.title}}"
+    newvalue="{{item.newvalue}}"
+    label="{{item.label}}"
+    border="{{item.border}}"
+    value="{{item.isread}}"
+    icon=" <icon class='icon-point' ></icon> "
+  />
+  </block>
+   <!-- <icon class='icon-point' size='16px' ></icon> -->
+</van-panel>
+</view>
+
+ </view>
+

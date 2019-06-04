@@ -1,0 +1,442 @@
+<!-- tab--> 
+<view class='tabs-wrapper'>
+  <view data-num="1" class='tab-wrapper ' bindtap="onTab">
+    <view  class="txt {{tabIndex==1 ? 'tab-active' : ''}}">综合表现</view>
+  </view>
+  <view data-num="2" class="tab-wrapper" bindtap="onTab">
+    <view class="txt {{tabIndex==2 ? 'tab-active' : ''}}">家庭评价</view>
+  </view>
+  <view data-num="3" class="tab-wrapper" bindtap="onTab">
+    <view class="txt {{tabIndex==3 ? 'tab-active' : ''}}">孩子自评</view>
+  </view>
+</view> 
+<!-- /tab-->
+<!--孩子自评-->
+<view id="kid" style="display: {{tabIndex==3 ? 'block': 'none'}}" >
+    <van-loading type="spinner" color="rgb(124, 124, 124) " wx:if='{{kidlist.length==0 }}'/>
+    <view wx:else>
+        <van-notice-bar
+          mode="closeable"
+          text="一周内科多次评价，以最后一次为准一周内科多次评价，以最后一次为准一周内科多次评价，以最后一次为准"
+        />
+        <!--标题-->
+        <view class='child-title'>
+          <text>----</text> 自评表 <text>----</text>
+        </view>
+        <!--/标题-->
+      <view class='child-wrapper'>
+        <i-panel title="group-水果" >
+            <i-checkbox-group current="{{currentKid}}" bindchange="handleKidChange">
+                <i-checkbox 
+                  wx:for="{{kidlist}}" 
+                  position="{{position}}" 
+                  wx:key="{{item.id}}" 
+                  value="{{item.name}}" 
+                  position="left" 
+                  color="rgb(6,223,176)">
+                </i-checkbox>
+            </i-checkbox-group>
+        </i-panel>
+      </view>
+
+      <!--上传图片-->
+      <view class='upload-img'>
+          <view class='title'>
+            <text>上传图片</text>
+            <text class='num'>{{uploadNum}}/9</text>
+          </view>
+          <view class='img-wrapper' wx:for='{{uploadList}}' wx:key='{{index}}'>
+            <view class='add-img  show-wrapper'>
+              <image style="width:20px;height:20px"class='del_icon' bindtap='clearImg' data-index="{{index}}" src="../../../image/comment/del.png"></image>
+              <image style='width:100%;height:100%;border-radius:8px;'bindtap='' data-index="{{index}}" src='{{item}}'></image>
+            </view>
+          </view>
+          <view class='img-wrapper' wx:if='{{showUpload}}'>
+            <view class='add-img' bindtap='uploadImg'>
+              <image src='../../../image/comment/图片.png'></image>
+              <text>图片</text>
+            </view>
+          </view>
+          <view style='clear:both'></view>
+      </view>
+      <!--/上传图片-->
+
+      <!--提交-->
+      <view class='submit'>
+        <button class='btn' bindtap='kidSubmit'>提交</button>
+      </view>
+      <!--/提交-->
+    </view>
+</view>
+<!--/孩子自评-->
+
+<!--家庭评价-->
+    <view class='family' style="display: {{tabIndex==2 ? 'block': 'none'}}">
+    <van-loading wx:if='{{parentlist.length == 0}}'type="spinner" color="rgb(124, 124, 124) " wx:if='{{parentlist.length==0 }}'/>
+        <view wx:else>
+          <van-notice-bar
+            mode="closeable"
+            text="一周内科多次评价，以最后一次为准一周内科多次评价，以最后一次为准一周内科多次评价，以最后一次为准"
+          />
+          <!--标题-->
+          <view class='family-title'>
+            <text>----</text> 家长评价 <text>----</text>
+          </view>
+          <view class='family-wrapper'>
+            <view class='pj-content'>
+              <view class='title'>
+                责任担当
+                <view class='line'></view>
+              </view>
+              <view class=''>
+                <i-panel title="group-水果" >
+                    <i-checkbox-group current="{{current1}}" bindchange="handleChange1">
+                        <i-checkbox 
+                          wx:for="{{ parentlist[4]}}" 
+                          position="{{position}}" 
+                          wx:key="{{item.id}}" 
+                          value="{{item.name}}" 
+                          position="left" 
+                          color="rgb(6,223,176)">
+                        </i-checkbox>
+                    </i-checkbox-group>
+                </i-panel>
+              </view>
+              <view class='icon-wrapper'>
+                <image src='../../../image/comment/group.png'></image>
+              </view>
+            </view>
+            <view class='pj-content juli'>
+              <view class='title'>
+                健康生活
+                <view class='line'></view>
+              </view>
+              <view class=''>
+                <i-panel title="group-水果" >
+                    <i-checkbox-group current="{{current2}}" bindchange="handleChange2">
+                        <i-checkbox 
+                          wx:for="{{ parentlist[3]}}" 
+                          position="{{position}}" 
+                          wx:key="{{item.id}}" 
+                          value="{{item.name}}" 
+                          position="left" 
+                          color="rgb(6,223,176)">
+                        </i-checkbox>
+                    </i-checkbox-group>
+                </i-panel>
+              </view>
+              <view class='icon-wrapper'>
+                  <image src='../../../image/comment/paper-plane.png'></image>
+              </view>
+            </view>
+            <view class='pj-content juli'>
+              <view class='title'>
+                学会学习
+                <view class='line'></view>
+              </view>
+              <view class=''>
+                <i-panel title="group-水果" >
+                    <i-checkbox-group current="{{current3}}" bindchange="handleChange3">
+                        <i-checkbox 
+                          wx:for="{{ parentlist[2]}}" 
+                          position="{{position}}" 
+                          wx:key="{{item.id}}" 
+                          value="{{item.name}}" 
+                          position="left" 
+                          color="rgb(6,223,176)">
+                        </i-checkbox>
+                    </i-checkbox-group>
+                </i-panel>
+              </view>
+              <view class='icon-wrapper'>
+                  <image src='../../../image/comment/notebook.png'></image>
+              </view>
+            </view>
+            <view class='pj-content juli'>
+              <view class='title'>
+                科学精神
+                <view class='line'></view>
+              </view>
+              <view class=''>
+                <i-panel title="group-水果" >
+                    <i-checkbox-group current="{{current4}}" bindchange="handleChange4">
+                        <i-checkbox 
+                          wx:for="{{ parentlist[1]}}" 
+                          position="{{position}}" 
+                          wx:key="{{item.id}}" 
+                          value="{{item.name}}" 
+                          position="left" 
+                          color="rgb(6,223,176)">
+                        </i-checkbox>
+                    </i-checkbox-group>
+                </i-panel>
+              </view>
+              <view class='icon-wrapper'>
+                <image src='../../../image/comment/online-conference.png'></image>
+              </view>
+            </view>
+            <view class='pj-content juli'>
+              <view class='title'>
+                人文底蕴
+                <view class='line'></view>
+              </view>
+              <view class=''>
+                <i-panel title="group-水果" >
+                    <i-checkbox-group current="{{current5}}" bindchange="handleChange5">
+                        <i-checkbox 
+                          wx:for="{{ parentlist[0]}}" 
+                          position="{{position}}" 
+                          wx:key="{{item.id}}" 
+                          value="{{item.name}}" 
+                          position="left" 
+                          color="rgb(6,223,176)">
+                        </i-checkbox>
+                    </i-checkbox-group>
+                </i-panel>
+              </view>
+              <view class='icon-wrapper'>
+                <image src='../../../image/comment/bookmark.png'></image>
+              </view>
+            </view>
+
+        <!--提交-->
+          <view class='submit'>
+            <button class='btn' bindtap='parentSubmit'>提交</button>
+          </view>
+          <!--/提交-->
+        </view>
+      </view>
+  </view>
+<!--/家庭评价-->
+
+<!--综合评价-->
+<view class='total' style="display: {{tabIndex==1 ? 'block': 'none'}}">
+      <!--标题-->
+    <view class='child-title' >
+      <view><text>----</text> 综合评价 <text>----</text></view>
+      <picker  value="{{index}}" range="{{array}}" range-key="name" bindchange="bindPickerChange">
+        <view class="picker">
+          第{{array[index].id}}周
+        </view>
+      </picker>
+    </view>
+
+    <!--/标题-->
+    <view class='total-wrapper'>
+    <!--责任担当-->
+      <view class='total-content'>
+          <view class='title'>
+            责任担当
+            <view class='line'></view>
+          </view>
+          <view class='icon-wrapper'>
+            <image src='../../../image/comment/group.png'></image>
+          </view>
+          <view class='zp-type-wrapper'>
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/jia.png'></image>
+               <text>家庭评价</text>
+             </view>
+             <view class='comment' wx:for='{{zerenlist[0]}}' wx:key>
+              <text>{{item}}</text>
+             </view>
+            </view>
+            
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/xuexiao.png'></image>
+               <text>学校评价</text>
+             </view>
+              <view class='comment' wx:for='{{zerenlist[1]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/wode.png'></image>
+               <text>自我评价</text>
+             </view>
+              <view class='comment' wx:for='{{zerenlist[2]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+    <!--/责任担当-->
+    <!--健康生活-->
+        <view class='total-content' style='margin-top:50px'>
+          <view class='title'>
+            健康生活
+            <view class='line'></view>
+          </view>
+          <view class='icon-wrapper'>
+            <image src='../../../image/comment/paper-plane.png'></image>
+          </view>
+          <view class='zp-type-wrapper'>
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/jia.png'></image>
+               <text>家庭评价</text>
+             </view>
+             <view class='comment' wx:for='{{lifelist[0]}}' wx:key>
+              <text>{{item}}</text>
+             </view>
+            </view>
+            
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/xuexiao.png'></image>
+               <text>学校评价</text>
+             </view>
+              <view class='comment' wx:for='{{lifelist[1]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/wode.png'></image>
+               <text>自我评价</text>
+             </view>
+              <view class='comment' wx:for='{{lifelist[2]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+    <!--/健康生活-->
+
+        <!--学会学习-->
+        <view class='total-content' style='margin-top:50px'>
+          <view class='title'>
+            学会学习
+            <view class='line'></view>
+          </view>
+          <view class='icon-wrapper'>
+            <image src='../../../image/comment/notebook.png'></image>
+          </view>
+          <view class='zp-type-wrapper'>
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/jia.png'></image>
+               <text>家庭评价</text>
+             </view>
+             <view class='comment' wx:for='{{learnlist[0]}}' wx:key>
+              <text>{{item}}</text>
+             </view>
+            </view>
+            
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/xuexiao.png'></image>
+               <text>学校评价</text>
+             </view>
+              <view class='comment' wx:for='{{learnlist[1]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/wode.png'></image>
+               <text>自我评价</text>
+             </view>
+              <view class='comment' wx:for='{{learnlist[2]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+    <!--/学会学习-->
+        <!--科学精神-->
+        <view class='total-content' style='margin-top:50px'>
+          <view class='title'>
+            科学精神
+            <view class='line'></view>
+          </view>
+          <view class='icon-wrapper'>
+            <image src='../../../image/comment/online-conference.png'></image>
+          </view>
+          <view class='zp-type-wrapper'>
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/jia.png'></image>
+               <text>家庭评价</text>
+             </view>
+             <view class='comment' wx:for='{{sciencelist[0]}}' wx:key>
+              <text>{{item}}</text>
+             </view>
+            </view>
+            
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/wxuexiao.png'></image>
+               <text>学校评价</text>
+             </view>
+              <view class='comment' wx:for='{{sciencelist[1]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/wode.png'></image>
+               <text>自我评价</text>
+             </view>
+              <view class='comment' wx:for='{{sciencelist[2]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+    <!--/科学精神-->
+        <!--人文底蕴-->
+        <view class='total-content' style='margin-top:50px'>
+          <view class='title'>
+            人文底蕴
+            <view class='line'></view>
+          </view>
+          <view class='icon-wrapper'>
+            <image src='../../../image/comment/bookmark.png'></image>
+          </view>
+          <view class='zp-type-wrapper'>
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/jia.png'></image>
+               <text>家庭评价</text>
+             </view>
+             <view class='comment' wx:for='{{humanlist[0]}}' wx:key>
+              <text>{{item}}</text>
+             </view>
+            </view>
+            
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/xuexiao.png'></image>
+               <text>学校评价</text>
+             </view>
+              <view class='comment' wx:for='{{humanlist[1]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+
+            <view class='zp-type'>
+             <view class='title'>
+               <image src='../../../image/comment/wode.png'></image>
+               <text>自我评价</text>
+             </view>
+              <view class='comment' wx:for='{{humanlist[2]}}' wx:key>
+                <text>{{item}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+    <!--/人文底蕴-->
+    </view>
+
+
+</view>
+<!--/综合评价-->

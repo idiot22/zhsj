@@ -1,0 +1,114 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx96a8c6a9a79baa86",
+	"projectname": "%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E6%9C%80%E6%9C%80%E6%96%B0",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": -1,
+					"name": "l",
+					"pathName": "page/component/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录页",
+					"pathName": "page/component/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录页",
+					"pathName": "page/component/person/person",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录页",
+					"pathName": "page/component/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录页",
+					"pathName": "page/component/myinfo/myinfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "page/component/person/person",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "page/component/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提交",
+					"pathName": "page/component/issue/issue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tongzhi",
+					"pathName": "page/component/kcinfo/kcinfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "shouye",
+					"pathName": "page/component/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

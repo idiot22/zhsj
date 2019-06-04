@@ -1,6 +1,21 @@
-@import '../common/common.wxss';
+
+.newest .card-swiper swiper-item {
+  width: 222rpx!important ;
+}
+.card-swiper swiper-item .bg-img {
+ 
+  transform: scale(0.96);
+  transition: all 0.2s ease-in 0s;
+}
+.van-loading van-loading
+{
+  width:50px;
+height:50px;
+background-color:#c9c9c9;
+
+}
 swiper {
-    height: 421.5rpx;
+    height: 300rpx;
 }
 swiper-item image {
     width: 100%;
@@ -28,16 +43,19 @@ swiper-item image {
     width: 100%;
     height: 100%;
 }
-
-.newest-box{
-    padding:0 40rpx;
+.newest{
+   height:1520rpx;
+   margin-top:4rpx;
+   background-color: white
 }
+
 .newest-box .newest-list{
     display: inline-block;
     width: 325rpx;
     height: 325rpx;
+
     margin:0 20rpx 20rpx 0;
-    border-radius: 10px;
+ /*   border-radius: 10px; */
     text-align: center;
     background: #f5f6f5;
 }
@@ -45,10 +63,162 @@ swiper-item image {
     margin-right: 0;
 }
 .newest-box .newest-list image{
-    width: 175rpx;
-    height: 175rpx;
-    margin: 20rpx 0 10rpx;
+width:200rpx;
+height:226rpx;
+margin:20rpx 0 10rpx;
+/* border-radius:10%; */
+
+    
 }
 .newest-box .newest-list .newest-text{
     font-size: 32rpx;
+}
+
+.newest-box 
+{
+   float:left;
+   margin-top: 20rpx
+}
+
+.imgsilder {
+/*  border-radius: 25rpx; */
+  width: 100%;
+  height: 300rpx;
+  margin: 0rpx auto;
+  display: block;
+  /* margin-top: 15rpx; *//* border-radius: 25rpx;  */
+  overflow: hidden;
+ /* margin-top: 25rpx; */
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+ /* border-radius: 25rpx; */
+}
+   .search{  
+      width: 693rpx;  
+      height: 80rpx;
+    }  
+    .search_arr {  
+      border: 1px solid #d0d0d0;  
+      border-radius: 10rpx;  
+      margin-left:30rpx;  
+      display:flex;
+      margin-top:13rpx;
+      height: 60rpx;
+       padding-bottom: 10rpx 
+
+    }  
+    .search_arr input{  
+      margin-left: 80rpx;  
+      height: 60rpx;  
+      border-radius: 20px;  
+    
+    }  
+    .bc_text {  
+      line-height:70rpx;  
+      height: 68rpx;  
+      margin-top: 34rpx; 
+      
+    }  
+      
+    .sousuo {  
+      margin-left: 15rpx;  
+      width: 15%;  
+      line-height: 150%;  
+      text-align: center;  
+      border: 1px solid #d0d0d0;  
+      border-radius: 10rpx; 
+     
+    }  
+    .page_row{  
+      display: flex;  
+      flex-direction: row  
+    }  
+    .icon-searchcion {  
+      margin: 4rpx 12rpx;  
+      position: relative;  
+      left:10rpx;  
+      z-index: 2;  
+      width: 25px;  
+      height: 25px;  
+      text-align: center;  
+    } 
+    .input-word
+    {
+      color: #999999
+    } 
+    /* 横着的分割View样式 */
+/*分割线样式*/
+.divLine{
+ background:#E0E3DA;
+ opacity: 0.7;
+width:88%;
+
+height:1px;
+margin:0 auto;
+margin-top:38rpx;
+}
+.tag_word
+{
+  font-size:16px;
+  margin-left:24rpx;
+  margin-top:23rpx
+}
+.tag_info
+{
+color:#666666;
+border:1px solid #cabfbf;
+width:auto;
+border-radius:12rpx;
+margin-right:10px;
+padding-left:4rpx;
+padding-right:4rpx;
+
+}
+.van-card__img {
+border-radius:10%;
+
+}
+.van-card__title {
+max-height:60px;
+line-height:20px;
+font-weight:700;
+font-size:16px;
+margin-bottom:16rpx;
+
+}
+.van-card__price van-card__price {
+color:#FF9933;
+}
+.van-card__num {
+float:right;
+font-size:16px;
+color:#00c5bc;
+}
+.van-card 
+{
+  background-color: #ffff
+}
+.van-tag--mark
+{
+  background-color: #21211b;
+  opacity:0.8;
+
+}
+.inform
+{
+  margin-top:72rpx;
+height:auto;
+width:100%;
+background-color:#ffff;
+padding-bottom:60rpx;
+
+}
+.cu-card.case .image{
+  height: 135px
+}
+.longimage{
+  height: 135px ! important;
 }

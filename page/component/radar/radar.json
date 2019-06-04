@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../ec-canvas/ec-canvas"
+  },
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "综合实践数据平台",
+    "navigationBarBackgroundColor": "#00c5bc",
+    "onReachBottomDistance": 60,
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true,
+    "disableScroll": true
+}

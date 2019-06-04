@@ -1,0 +1,94 @@
+.container
+{
+  width: auto;
+  height:auto;
+}
+.blue
+{
+  background-color: #00C5BC;
+  /* background-image: linear-gradient(45deg, #00C5BC, rgba(128, 233, 232, 1.00)); */
+  height:220rpx;
+  width: auto;
+}
+
+.choose
+{
+text-align: center;
+width:auto;
+height: 60rpx;
+font-size: 17px;
+font-family: PingFang SC Medium;
+color: rgba(109,97,97,1);
+
+
+}
+.picker
+{
+  text-align: center;
+/* margin: 0 auto; */
+width:auto;
+height: 50rpx;
+font-size: 15px;
+font-family: PingFang SC Medium;
+color: rgba(109,97,97,1);
+}
+.input-info
+{
+  width: auto;
+  height: auto;
+  margin:30rpx
+}
+.login-icon
+{
+  margin: 0 auto;
+  margin-top: 120rpx;
+  padding-top:10rpx;
+  width: 452rpx;
+  height:90rpx;
+  background-color: #00C5BC;
+  color: white;
+  border-radius:50rpx;
+  box-shadow: 0px 14rpx 15rpx 0px rgba(51,145,255,0.2);
+
+}
+.login-icon .word
+{
+  font-size: 17pt;
+  letter-spacing: 10rpx;
+  color: #fff;
+  font-family: PingFang SC Medium;
+  text-align: center;
+ 
+}
+.nickname
+{
+  color:black;
+  text-align:center;
+  font-family: PingFang SC Medium;
+  font-size: 18px;
+}
+.other
+{
+width: 246rpx;
+height: 26rpx;
+margin: 0 auto;
+opacity: 1;
+font-size: 16px;
+font-family: PingFang SC Regular;
+color: rgba(16,163,156,1);
+letter-spacing: 2px;
+margin-top:20rpx;
+display: flex;
+text-align: center;
+}
+
+.resign
+{
+  text-align: center
+  
+}
+
+.login-icon{
+  padding-top:0px;
+  margin-top:20px
+}

@@ -1,0 +1,37 @@
+page{
+  background: rgb(251,249,254)
+}
+.time{
+  padding: 10px;
+  text-align: center;
+  color: rgb(133, 133, 133);
+  font-size:12px;
+}
+/*消息条的样式*/
+.info-content{
+  padding: 15px;
+  padding-top:0px; 
+}
+.info-wrapper{
+  border-radius: 8px;
+  background: white;
+  padding: 10px;
+  box-shadow: 2px 0px 10px rgb(243, 243, 243);
+  margin-bottom:20rpx;
+}
+.info-wrapper .title{
+  display: flex;
+  justify-content: space-between;
+  font-size:32rpx;
+  padding-bottom:10rpx 
+}
+.info-wrapper .xinxi{
+  font-size:25rpx;
+  color:rgb(82, 82, 82);
+  padding-bottom:10rpx 
+}
+.info-wrapper .info-txt{
+  font-size:28rpx;
+  color:rgb(128, 128, 128);
+}
+

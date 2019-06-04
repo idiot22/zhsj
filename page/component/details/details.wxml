@@ -1,6 +1,10 @@
+<van-notice-bar
+ mode="closeable"
+  text="上百款精选食品优惠酬宾，满减叠加活动享不停，新用户立减活动持续进行中"
+/>
 <view class="main">
     <view class="goods-box">
-        <image src="{{goods.image}}" class="goods-thumb"></image>
+        <image src="{{SPPIC}}" class="goods-thumb"></image>
         
         <navigator open-type="switchTab" url="../cart/cart">
             <view class="carts-icon {{scaleCart?'on':''}}">
@@ -10,22 +14,24 @@
         </navigator>
         
         <view class="goods-operation">
-            <text class="goods-operation-num">数量  {{num}}</text>
+            <text class="goods-operation-num">{{num}}</text>
             <text class="goods-operation-add" bindtap="addCount">+</text>
             <text class="goods-to-cart" bindtap="addToCart">加入购物车</text>
             <image src="/image/cart1.png"  class="goods-cart-img" bindtap="addToCart"></image>
         </view>
-        <image wx:if="{{show}}" src="/image/cart1.png" class="to-carts-icon"></image>
+        <image wx:if="{{show}}" src="{{SPPIC}}" class="to-carts-icon"></image>
         <view class="goods-stock">{{goods.stock}}</view>
-        <view class="goods-title">{{goods.title}}</view>
-        <view class="goods-price">￥ {{goods.price}}</view>
+        <view class="goods-title">{{SPMC}}</view>
+        <view class="goods-price">￥{{SPJG}}</view>
     </view>
     <view class="goods-tab-box">
-        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">商品详情</view>
+        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">商品详情
+       
+        </view>
         <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">产品参数</view>
         <view class="goods-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">售后保障</view>
         <view class="goods-content">
-            <view wx:if="{{curIndex === 0}}">{{goods.detail}}</view>
+            <view wx:if="{{curIndex === 0}}" class='detail-text'> {{SPXQ}}</view>
             <view wx:if="{{curIndex === 1}}">{{goods.parameter}}</view>
             <view wx:if="{{curIndex === 2}}">{{goods.service}}</view>
         </view>

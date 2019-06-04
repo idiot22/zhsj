@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-input": "../../../iview/input/index",
+    "i-radio": "../../../iview/radio/index",
+    "i-tabs": "../../../iview/tabs/index",
+    "i-tab": "../../../iview/tab/index"
+  },
+      "navigationBarTextStyle": "white",
+      "navigationBarTitleText": "作品发布",
+      "navigationBarBackgroundColor": "#00c5bc",
+      "onReachBottomDistance": 60,
+      "backgroundColor": "#eeeeee"
+}

@@ -1,0 +1,186 @@
+
+      <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{courseImgUrl}}')">
+  <view class='padding-xl text-white'>
+    <view class='padding-xs text-xl'>
+     {{courseName}}
+    </view>
+    <view class='padding-xs'>
+     适用年级：{{gradeId}}
+    </view>
+  </view>
+</view>
+
+<!-- <scroll-view scroll-x class="bg-white nav">
+<view class='flex text-center '>
+    <view class="cu-item flex-sub {{index==TabCur?'text-mars cur':''}}" wx:for="{{course_tab}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item}}
+
+    </view>
+  </view>
+</scroll-view> -->
+<view class='bottom' >
+<i class="iconfont icon-dianhua" style='font-size:80rpx;margin-left:50rpx;' bindtap="dianhua"></i>
+<i class="iconfont icon-zhuanzai" style='font-size:80rpx;margin-left:50rpx'></i>
+<view class='join'>
+  <view class='word' wx:if="{{mycourseShow == 'true'}}"  bindtap='exitCourse'>
+   退选课程
+   </view>
+   <view class='word' bindtap='chooseCourse' wx:else>
+   立即报名
+   </view>
+
+  </view>
+</view>
+  <!-- <scroll-view class="course-content" scroll-y="true"> -->
+
+<wux-sticky scrollTop="{{scrollTop}}">
+            <wux-sticky-item>
+            
+<view slot="title"> 
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation="{{true}}">
+<view class='flex text-center '>
+    <view class="cu-item flex-sub {{index==TabCur?'text-mars cur':''}}" wx:for="{{course_tab}}" wx:key bindtap='tabSelect' data-id="{{index}}" >
+      {{item}}
+
+    </view>
+  </view>
+</scroll-view>
+</view>
+    <view slot="content">
+      <view class="course-content">
+            <view wx:if="{{TabCur === 0}}" >
+            <view class='detail-text'>
+            <view class='title'>
+            {{courseName}}
+            </view>
+            <view class='price'>
+            课程费用：¥ {{money}}
+            </view>
+             <view class='info' style='border: #adadb0 solid 1px;'>
+             <view class='item'> 
+        <i class="iconfont icon-nianji" ></i>
+               适用年级：{{gradeId}}</view>
+            <view class='item'>
+          <i class="iconfont icon-guishukecheng" ></i>
+          课程归属：{{address}}</view>
+            <view class='item'>
+    <i class="iconfont icon-jiaoshi" ></i>
+           任课教师：{{manager}}</view>
+            </view>
+            </view>
+           
+          
+<!-- 课程任务 -->
+            <view class='detail-text'>
+            
+              <text class='text'>课程任务</text>
+          
+            <view class="divLine"></view>
+            <view class='article'>
+   <text space='nbsp' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{subjectMission}}</text>
+             
+              
+            </view>
+            </view>
+<!-- 课程目标 -->
+            <view class='detail-text'>
+            
+              <text class='text'>课程目标</text>
+          
+            <view class="divLine"></view>
+            <view class='article' >
+ <text space='nbsp' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{subjectTarget}}</text>
+             
+              
+            </view>
+            </view>
+ <!-- 课程准备 -->
+            <view class='detail-text'>
+            
+              <text class='text'>课程准备</text>
+          
+            <view class="divLine"></view>
+            <view class='article'  style='padding-bottom:112rpx'>
+<text space='nbsp' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{subjectPrepare}}</text>
+             
+              
+            </view>
+            </view>
+            </view>
+            <!-- 上课信息 -->
+           <view wx:if="{{TabCur === 1}}">
+    <view class='detail-text'>
+            
+              <text class='text'>报名时间</text>
+          
+            <view class="divLine"></view>
+            <view class='info02' >
+             <!-- <view class='item'> 
+        <i class="iconfont icon-rili" ></i>{{week}}</view> -->
+               <view class='item' ><i class="iconfont icon-shijian" ></i>{{startDate}}</view>
+<view class='item' ><i class="iconfont icon-shijian" ></i>{{endDate}}</view>
+   <view class='item' ><i class="iconfont icon-name" ></i>人数:{{number}}</view>          
+            
+ 
+           
+            </view>
+            </view>
+
+<view class='detail-text'>
+            
+              <text class='text'>上课时间</text>
+          
+            <view class="divLine"></view>
+            <view class='info02' >
+             <view class='item'> 
+        <i class="iconfont icon-rili" ></i>{{week}}</view>
+               <view class='item' ><i class="iconfont icon-shijian" ></i>开始：{{courseStartTime}}</view>
+               <view class='item' ><i class="iconfont icon-shijian" ></i>结束：{{courseEndTime}}</view>
+           
+            </view>
+            </view>
+
+           </view>
+            <view wx:if="{{TabCur === 2}}">
+            <view class="cu-list menu menu-avatar comment solids-top" style='margin-top:40rpx'>
+              <view class="cu-item" wx:for="{{2}}" wx:key>
+        <view class="cu-avatar round" style="background-image: url('{{avatar}}');"></view>
+        <view class='content'>
+          <view class='text-grey'>Helen</view>
+          <view class='text-gray text-content text-df'>
+            很有收获，很棒的课程
+          </view>
+          <view class='bg-grey padding-sm radius margin-top-sm  text-sm' wx:if="{{index==1}}">
+            <view class="flex {{index!=0?'margin-top-sm':'' }}" wx:for="{{1}}" wx:key>
+              <view>我：</view>
+              <view class='flex-sub'>我也觉得！课程很有趣</view>
+            </view>
+          </view>
+          <view class='margin-top-sm flex justify-between'>
+            <view class='text-gray text-df'>2019年5月4日</view>
+            <view>
+              <i class="iconfont icon-praise" ></i>
+              <i class="iconfont icon-dialog margin-left-sm" ></i>
+            </view>
+          </view>
+        </view>
+          </view>
+            </view> 
+            </view> 
+
+
+
+
+
+
+
+
+
+            
+           
+            </view>
+        <!-- </scroll-view> -->
+         </view>
+
+            </wux-sticky-item>
+            </wux-sticky>

@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container1" >
+  <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+  <view class='notice'>
+    <image src='../../../image/dianji.png'></image>
+    <text>轻触雷达图查看详情</text>
+  </view>
+  <view class='end'>
+  <navigator url="/pages/timeframe/timeframe">
+    <view class='title'>测评报告</view></navigator>
+    <view class='grade'>
+      <view class='yuan'></view>
+      <text>某某同学在科学精神及责任担当上表现的很好哦v某某同学在科学精神及责任担当上表现的很好哦
+      某某同学在科学精神及责任担当上表现的很好哦v某某同学在科学精神及责任担当上表现的很好哦
+      </text>
+    </view>
+    <view class='grade'>
+      <view class='yuan'></view>
+      <text>某某同学在科学精神及责任担当上表现的很好哦</text>
+    </view>
+  </view>
+</view>

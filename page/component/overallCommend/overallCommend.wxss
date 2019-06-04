@@ -1,0 +1,214 @@
+/* pages/overallCommend/overallCommend.wxss */
+page{
+  background: rgb(251,249,254);
+  padding-top: 40px;
+  padding-bottom: 50rpx
+}
+/*tab样式*/
+.tabs-wrapper{
+  box-sizing:border-box;
+  position: fixed;
+  top:0px;
+  display: flex;
+  justify-content: space-around;
+  font-weight:500;
+  color:#333;
+  font-size:14px;
+  width:100%;
+  height:40px;
+  padding: 5px 0px; 
+  background: white;
+  box-shadow:0px 2px 25px rgba(0, 206, 144, 0.1);
+  z-index:100;
+}
+.tab-wrapper{
+ 
+}
+.txt{
+    padding:4px 5px;
+}
+.tab-active{
+  border-radius:5px;
+  background:linear-gradient(to right,#07dbd1, #03e779);
+  color:white;
+  box-shadow:2px 4px 10px rgba(0,0,0,0.1);
+}
+ /* 孩子自评样式*/
+ #kid{
+   display: none;
+ }
+.child-wrapper{
+   width:90%;
+   margin: auto;
+   border-radius: 10px;
+   overflow: hidden; 
+}
+.child-title,.family-title{
+  width:50%;
+  background:rgba(41,240,150,0.1);
+  margin:auto;
+  margin-bottom:20px;
+  text-align:center;
+  align-content:center;
+  color:#55c07c;
+  padding:10px;
+  margin-top: 20px; 
+  border-radius:15px 0px;
+}
+.child-title text{
+  font-weight:100
+}
+/*上传图片*/
+ .upload-img{
+    width:90%;
+    margin:auto;
+    margin-top:20px;
+    background:white;
+    padding:10px;
+    box-sizing:border-box;
+    
+ }
+.upload-img .title{
+  font-size:16px;
+  padding-bottom:10px; 
+  border-bottom:0.01rpx solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between
+}
+.num{
+  font-size:12px;
+  color: rgb(155, 155, 155)
+}
+.img-wrapper{
+  padding: 10px;
+  float: left;
+}
+.add-img{
+  width:70px;
+  height:70px;
+  border:1px dotted rgb(138, 138, 138);
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  align-items:center;
+  justify-content:center;
+
+}
+.add-img image{
+  width:30px;
+  height:30px;
+}
+.add-img text{
+  font-size:12px;
+  color:#4c4c4c;
+}
+#kid .submit{
+ padding: 20px;
+}
+#kid .btn{
+  border-radius: 10em;
+  height:50px;
+  line-height:48px;
+  background:#07dbd1;
+  color: white
+}
+
+/*家庭评价*/
+.family-wrapper,.total-wrapper{
+  padding: 1px 20px;
+}
+.pj-content,.total-content{
+  position: relative;
+  padding:10px;
+  background:white;
+  padding-top: 30px;
+  border-radius:8px;
+  margin-top:20px; 
+}
+.juli{
+  margin-top: 40px;
+}
+.pj-content,.total-content .title{
+  background:white;
+  text-align:center;
+}
+.line{
+  width:20%;
+  height:4px;
+  background:#07dbd1;
+  border-radius:30%;
+  margin:auto;
+
+}
+.icon-wrapper{
+  width:50px;
+  height:50px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top:-15%;
+  left:50%;
+  transform: translateX(-50%);
+  box-shadow:0px 2px 10px rgba(0,0,0,0.05);
+}
+.submit{
+  padding: 20px;
+}
+.btn{
+  border-radius: 10em;
+  height:50px;
+  line-height:48px;
+  background:#07dbd1;
+  color: white
+}
+.icon-wrapper image{
+  width: 100%;
+  height:100%;
+}
+
+/*综合评价*/
+.total-content .icon-wrapper{
+   position: absolute;
+   top:-25px;
+}
+.total-content .title{
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid rgb(248, 248, 248)
+}
+.zp-type .title{
+  padding: 10px 0px;
+  display:flex;
+  align-items:center;
+
+}
+.zp-type .title image{
+  width:20px;
+  height:20px;
+  margin-right: 10px; 
+}
+.zp-type .title text{
+  font-size:15px;
+}
+.comment{
+  background:rgb(250, 250, 250);
+  padding:5px 0px;
+  border-radius:8px;
+  padding-left:10px;
+  font-size:14px;
+  color: #5a5c5c;
+  margin-bottom:10px; 
+}
+
+
+.del_icon{
+  position: absolute;
+  right:-10px;
+  top:-10px;
+  z-index: 10
+}
+.show-wrapper{
+  position: relative;
+}

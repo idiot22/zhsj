@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-checkbox-group": "../../../iview/checkbox-group/index",
+    "i-checkbox": "../../../iview/checkbox/index"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "综合评价",
+  "navigationBarBackgroundColor": "#00c5bc"
+}

@@ -1,47 +1,66 @@
 {
   "pages": [
-      "page/component/index",
-      "page/component/category/category",
-      "page/component/cart/cart",
-      "page/component/user/user",
-      "page/component/address/address",
-      "page/component/orders/orders",
-      "page/component/details/details",
-      "page/component/list/list"
+    "page/component/login/login",
+    "page/component/index",
+    "page/component/more2/more2",
+    "page/component/issue/issue",
+    "page/component/person/person",
+    "page/component/zhuce/zhuce",
+    "page/component/myCoursetijiao/myCoursetijiao",
+    "page/component/kcinfoXq/kcinfoXq",
+    "page/component/radar/radar",
+    "page/component/overallCommend/overallCommend",
+    "page/component/kcinfo/kcinfo",
+    "page/component/more/more",
+    "page/component/timeframe/timeframe",
+    "page/component/works/works",
+    "page/component/myinfo/myinfo",
+    "page/component/c-details/c-details"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "综合实践想要获取你的位置"
+    }
+  },
   "window": {
-    "navigationBarTextStyle": "#ffffff",
-    "navigationBarTitleText": "零食商贩",
-    "navigationBarBackgroundColor": "#AB956D",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "综合实践数据平台",
+    "navigationBarBackgroundColor": "#00c5bc",
+    "onReachBottomDistance": 60,
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#b7b7b7",
     "selectedColor": "#AB956D",
-    "borderStyle": "#f5f5f5",
-    "backgroundColor": "#f5f5f5",
-    "list": [{
-      "pagePath": "page/component/index",
-      "iconPath": "image/12.png",
-      "selectedIconPath": "image/11.png",
-      "text": "主页"
-    }, {
-      "pagePath": "page/component/category/category",
-      "iconPath": "image/22.png",
-      "selectedIconPath": "image/21.png",
-      "text": "分类"
-    }, {
-      "pagePath": "page/component/cart/cart",
-      "iconPath": "image/32.png",
-      "selectedIconPath": "image/31.png",
-      "text": "购物车"
-    }, {
-      "pagePath": "page/component/user/user",
-      "iconPath": "image/42.png",
-      "selectedIconPath": "image/41.png",
-      "text": "我的"
-    }]
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "page/component/index",
+        "iconPath": "/image/tabbar/discover.png",
+        "selectedIconPath": "/image/tabbar/discover-c.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "page/component/more/more",
+        "iconPath": "/image/tabbar/课程.png",
+        "selectedIconPath": "/image/tabbar/课程-c.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "page/component/myCoursetijiao/myCoursetijiao",
+        "iconPath": "/image/tabbar/提交.png",
+        "selectedIconPath": "/image/tabbar/提交-c.png",
+        "text": "提交"
+      },
+      {
+        "pagePath": "page/component/person/person",
+        "iconPath": "/image/tabbar/my.png",
+        "selectedIconPath": "/image/tabbar/my-c.png",
+        "text": "我的"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,
@@ -49,5 +68,29 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": false
+  "debug": false,
+  "usingComponents": {
+    "van-transition": "page/component/dist/transition/index",
+    "van-loading": "page/component/dist/loading/index",
+    "van-cell": "page/component/dist/cell/index",
+    "van-cell-group": "page/component/dist/cell-group/index",
+    "van-button": "page/component/dist/button/index",
+    "van-collapse": "page/component/dist/collapse/index",
+    "van-collapse-item": "page/component/dist/collapse-item/index",
+    "van-field": "page/component/dist/field/index",
+    "van-toast": "page/component/dist/toast/index",
+    "van-popup": "page/component/dist/popup/index",
+    "van-dialog": "page/component/dist/dialog/index",
+    "van-card": "page/component/dist/card/index",
+    "van-notice-bar": "page/component/dist/notice-bar/index",
+    "van-rate": "page/component/dist/rate/index",
+    "van-switch-cell": "page/component/dist/switch-cell/index",
+    "van-search": "page/component/dist/search/index",
+    "van-panel": "page/component/dist/panel/index",
+    "van-icon": "page/component/dist/icon/index",
+    "wux-filterbar": "../../demo/filterbar/index",
+    "wux-input": "../../demo/input/index",
+    "van-picker": "page/component/dist/picker/index"
+  },
+  "sitemapLocation": "sitemap.json"
 }

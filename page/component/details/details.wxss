@@ -1,4 +1,3 @@
-@import '../../common/common.wxss';
 
 .goods-box{
     position: relative;
@@ -8,8 +7,8 @@
     border-bottom: 30rpx solid #ededed;
 }
 .goods-box .goods-thumb{
-    width: 300rpx;
-    height: 300rpx;
+    width: 400rpx;
+    height: 400rpx;
     margin: 35rpx 0 125rpx;
 }
 
@@ -143,4 +142,14 @@
 }
 .goods-content{
     padding: 40rpx;
+}
+.detail-text {
+  margin-top:10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  letter-spacing: 2px;
+  line-height: 44rpx;
+  color: #666;
+  font-size: 28rpx;
+  font-family: microsoft yahei
 }

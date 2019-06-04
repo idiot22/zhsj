@@ -1,0 +1,67 @@
+<!--pages/cinema/tzxq/tzxq.wxml-->
+
+<view class='wrapper'>
+      <!--标题-->
+      <section id="xq-title">
+          <view id="title">
+              {{courseXq[courseXqIndex].courseName}}
+          </view>
+          <view id="xqicon">
+              <view id="icon-kuai">
+                  <view class="touxiang " id="tx">
+                    <image src='./tzxqtx.jpg'></image>
+                  </view>
+                  <text>{{courseXq[courseXqIndex].teacherName}}</text>
+              </view>
+              <view id="icon-kuai">
+                  <view class="touxiang" id="time">
+                      <image src='./time.png'></image>
+                  </view>
+                  <text>{{courseXq[courseXqIndex].createTime}}</text>
+              </view>
+              <view id="icon-kuai" style="position: absolute;right: 0.5em;">
+                  <view class="touxiang" id="see">
+                      <image src='./see.png'></image>
+                  </view>
+                  <text>{{courseXq[courseXqIndex].id}}</text>
+              </view>
+          </view>
+      </section>
+    <!--标题-->
+        <!--图片-->
+        <view id="xq-img">
+              <image src='{{courseXq[courseXqIndex].image}}' ></image>
+        </view>
+          <!--图片-->
+      <!--正文-->
+      <section id="wenzhang">
+          <view> {{courseXq[courseXqIndex].content1}}
+          </view>
+          <view> {{courseXq[courseXqIndex].content2}}
+          </view>
+          <view> {{courseXq[courseXqIndex].content2}}
+          </view>
+          <view> 
+          </view>
+      </section>
+      <!--附件-->
+      <section class='fujian-content'>
+        <view class='fujian-wrapper'>
+          <image src='./fujian.png'></image>
+          <text>探秘寻宝小组分组.pdf</text>
+        </view>
+        <view class='fujian-wrapper'>
+          <image src='./fujian.png'></image>
+          <text>探秘寻宝各小组排名.pdf</text>
+        </view>
+      </section>
+    <!--/附件-->
+</view>
+    <!--按钮-->
+    <view class='btn'>
+       <view class='btn-left' bindtap='previous'>上一篇</view>
+       <view class='btn-right' bindtap='next'>下一篇</view>
+    </view>
+
+
+

@@ -1,0 +1,91 @@
+<!--
+*问题
+*vant组件库修改原本样式，覆盖
+*vant的panel面板自定义 
+*文本空格 <text decode="{{true}}">
+*--> 
+<van-tabs active="{{ active }}" bind:change="onChange" color="#00c5bc"animated sticky="true">
+  <van-tab title="评价">
+    <van-loading type="spinner" color="rgb(124, 124, 124) " wx:if='{{message[3].length==0 }}'/>
+    <view wx:else>
+      <view class='time'>2019年05月21日</view>
+      <view class='info-content'>
+          <view class='info-wrapper' wx:for="{{message[3]}}" wx:key="{{item.id}}" bindtap='toMessageXq'  data-messageindex='{{index}}' data-tab='3' data-id='{{item.id}}'>
+            <view class='title'>
+              <text>{{item.courseName}}</text>
+              <van-tag round color="#f0f0f0" text-color="#a3a3a3">已读</van-tag>
+            </view>
+            <view class='xinxi' >
+                <text decode="{{true}}">发布人：{{item.teacherName}}  &nbsp; &nbsp; 发布时间：{{item.createTime}}</text>
+            </view>
+            <view class='info-txt'>{{item.content}}</view>
+          </view>
+        
+      </view>
+      <!--数据结束-->
+      <i-load-more tip="已经到底啦" loading="{{ false }}" />
+    </view>
+
+  </van-tab>
+  <van-tab title="选课">
+    <van-loading type="spinner" color="rgb(124, 124, 124) " wx:if='{{message[0].length==0 }}'/>
+    <view wx:else>
+      <view class='time'>2019年05月21日</view>
+      <view class='info-content'>
+          <view class='info-wrapper' wx:for="{{message[0]}}" wx:key="{{item.id}}" bindtap='hasRead' data-messageindex='{{index}}' data-tab='0'>
+            <view class='title'>
+              <text>{{item.courseName}}</text>
+              <van-tag wx:if='{{item.isRead==1}}'round color="#f0f0f0" text-color="#a3a3a3">已读</van-tag>
+              <van-tag wx:else round type="danger">未读</van-tag>
+            </view>
+            <view class='xinxi' >
+                <text decode="{{true}}">发布人：{{item.teacherName}}  &nbsp; &nbsp; 发布时间：{{item.createTime}}</text>
+            </view>
+            <view class='info-txt'>{{item.content}}</view>
+          </view>
+      </view>
+      <!--数据结束-->
+      <i-load-more tip="已经到底啦" loading="{{ false }}" />
+    </view>
+  </van-tab>
+  <van-tab title="考勤">
+    <van-loading type="spinner" color="rgb(124, 124, 124) " wx:if='{{message[1].length==0 }}'/>
+    <view wx:else>
+      <view class='time'>2019年05月21日</view>
+        <view class='info-content'>
+            <view class='info-wrapper' wx:for="{{message[1]}}" wx:key="{{item.id}}" bindtap='hasRead' data-messageindex='{{index}}' data-tab='1'>
+              <view class='title'>
+                <text>{{item.courseName}}</text>
+                <van-tag round color="#f0f0f0" text-color="#a3a3a3">已读</van-tag>
+              </view>
+              <view class='xinxi' >
+                  <text decode="{{true}}">发布人：{{item.teacherName}}  &nbsp; &nbsp; 发布时间：{{item.createTime}}</text>
+              </view>
+              <view class='info-txt'>{{item.content}}</view>
+            </view>
+        </view>
+        <!--数据结束-->
+        <i-load-more tip="已经到底啦" loading="{{ false }}" />
+    </view>
+  </van-tab>
+  <van-tab title="通知">
+    <van-loading type="spinner" color="rgb(124, 124, 124) " wx:if='{{message[2].length ==0 }}'/>
+    <view wx:else>
+      <view class='time'>2019年05月21日</view>
+        <view class='info-content'>
+            <view class='info-wrapper' wx:for="{{message[2]}}" wx:key="{{item.id}}" bindtap='toMessageXq'data-messageindex='{{index}}' data-tab='2'>
+              <view class='title'>
+                <text>{{item.courseName}}</text>
+                <van-tag round color="#f0f0f0" text-color="#a3a3a3">已读</van-tag>
+              </view>
+              <view class='xinxi' >
+                  <text decode="{{true}}">发布人：{{item.teacherName}}  &nbsp; &nbsp; 发布时间：{{item.createTime}}</text>
+              </view>
+              <view class='info-txt'>{{item.content}}</view>
+            </view>
+        </view>
+        <!--数据结束-->
+        <i-load-more tip="已经到底啦" loading="{{ false }}" />
+      </view>
+  </van-tab>
+</van-tabs>

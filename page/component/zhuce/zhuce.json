@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wux-cell-group": "../../../demo/cell-group/index",
+    "wux-cell": "../../../demo/cell/index",
+    "wux-cascader": "../../../demo/cascader/index"
+  }
+}

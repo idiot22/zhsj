@@ -1,0 +1,132 @@
+page{
+  background:rgb(253, 253, 253);
+  padding:5%
+}
+.zp-name{
+  align-items: center;
+}
+.input-wrapper{
+  box-sizing:border-box;
+ -moz-box-sizing:border-box; /* Firefox */
+ -webkit-box-sizing:border-box; /* Safari */ 
+  border-radius:5px;
+  width:90%;
+  box-shadow: 0px 2px 15px rgb(231, 231, 231);
+  
+  overflow: hidden;
+}
+.direction{
+  height:200rpx;
+  border: none;
+}
+.radio1{
+   position: absolute;
+   top:4px;
+   left:24%;
+}
+.radio2{
+   position: absolute;
+   top:4px;
+   left:47%;
+}
+.radio3{
+   position: absolute;
+   top:4px;
+   left:71%;
+}
+.radio-wrapper{
+  position: relative;
+  height:50px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+}
+.radio-wrapper text{
+padding:12px 15px;
+color:#333333;
+font-size:14px;
+width:200rpx
+}
+.add{
+  box-sizing: border-box;
+  padding: 20rpx;
+  width:150rpx;
+  height: 150rpx;
+  background: rgb(248, 248, 248);
+  margin:30rpx;
+  border-radius:5px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #818181;
+  font-size: 30rpx
+}
+.add image{
+  width:52rpx;
+  height: 52rpx;
+}
+.submit{
+  padding: 20px;
+}
+.btn{
+  border-radius: 10em;
+  height:50px;
+  line-height:48px;
+  background:#07dbd1;
+  color: white
+}
+
+/*上传图片*/
+ .upload-img{
+    width:90%;
+    margin:auto;
+    margin-top:20px;
+    background:white;
+    padding:10px;
+    box-sizing:border-box;
+    
+ }
+.upload-img .title{
+  font-size:16px;
+  padding-bottom:10px; 
+  border-bottom:0.01rpx solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between
+}
+.num{
+  font-size:12px;
+  color: rgb(155, 155, 155)
+}
+.img-wrapper{
+  padding: 10px;
+  float: left;
+}
+.add-img{
+  position: relative;
+  width:70px;
+  height:70px;
+  border:1px dotted rgb(138, 138, 138);
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  align-items:center;
+  justify-content:center;
+
+}
+.add-img image{
+  width:30px;
+  height:30px;
+}
+.add-img text{
+  font-size:12px;
+  color:#4c4c4c;
+}
+
+.del_icon{
+  position: absolute;
+  right:-10px;
+  top:-10px;
+  z-index: 10
+}

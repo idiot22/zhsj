@@ -1,0 +1,41 @@
+.wux-filterbar__text 
+{
+  color: #6d6c69
+}
+.tag_word
+{
+  font-size:16px;
+  margin-left:24rpx;
+  margin-top:23rpx
+}
+.tag_info
+{
+color:#666666;
+border:1px solid #cabfbf;
+width:auto;
+border-radius:12rpx;
+margin-right:10px;
+padding-left:4rpx;
+padding-right:4rpx;
+
+}
+.van-card__img {
+border-radius:10%;
+
+}
+.van-card__title {
+max-height:60px;
+line-height:20px;
+font-weight:700;
+font-size:16px;
+margin-bottom:16rpx;
+
+}
+.van-card__price van-card__price {
+color:#FF9933;
+}
+.van-card__num {
+float:right;
+font-size:16px;
+color:#00c5bc;
+}

@@ -1,0 +1,61 @@
+<view class="login-container">
+ <view class='blue' style='flex-direction: column;'>
+ <!-- <view style='width:130rpx;border-radius: 50%;height:130rpx;margin-left:300rpx;z-index:9999'>
+  <open-data type="userAvatarUrl"></open-data>
+ </view> -->
+
+  <!-- <view class="cu-avatar xl round margin-left" > <open-data type="userAvatarUrl"></open-data></view> -->
+  <!-- <image src="{{userInfo.avatarUrl}}"  style='width:130rpx;border-radius: 50%;height:130rpx;margin-left:300rpx'></image> -->
+
+  <van-transition show="{{userInfo.avatarUrl}}" duration="900" custom-class="block" name="fade-up">
+<image src="{{userInfo.avatarUrl}}"  style='width:130rpx;border-radius: 50%;height:130rpx;margin-left:308rpx;margin-top:30rpx'></image>
+ <view  class='nickname'>
+
+ {{userInfo.nickName}}</view>
+</van-transition>
+<!-- <open-data type="userNickName"></open-data> -->
+ </view>
+<view class="radius bg-mars ">
+  <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-black response' style='height:140rpx;'></image>
+</view>
+ <view class='choose'>
+  <view class="cu-item"  >
+  </view>学校：当前选择
+ </view>
+ <view class='choose-item'>
+ <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="name">
+    <view class="picker" >
+     <image src='/image/icon-test.png' style='width:36rpx;height:38rpx;margin-top:4rpx'></image>
+    {{multiArray[0][multiIndex[0]].name}} {{multiArray[1][multiIndex[1]].name}} {{multiArray[2][multiIndex[2]].name}}
+    </view>
+  </picker>
+  </view>
+<view class='input-info'>
+  <form bindsubmit="formSubmit">
+    <view class="cu-form-group">
+      <input placeholder="请输入学生姓名" class='radius' name='userName'></input>
+    </view>
+    <view class="cu-form-group">
+      <input placeholder="请输入年级(1-9)" class='radius' name='grade'></input>
+    </view>
+    <view class="cu-form-group">
+      <input placeholder="请输入性别" class='radius' name='sex'></input>
+    </view>
+    <view class="cu-form-group">
+      <input placeholder="请输入身份证后六位数" class='radius' name='userPwd' ></input>
+    </view>
+
+      <button class='login-icon' form-type="submit">
+        注册
+      </button>
+      <navigator url="../login/login">
+      <view class='other' style='padding-left:40px'>
+        登录
+      </view>
+    </navigator>
+  </form>
+</view>
+
+
+</view>
+

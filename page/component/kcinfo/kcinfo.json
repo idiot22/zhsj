@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-tab": "../dist/tab/index",
+    "van-tabs": "../dist/tabs/index",
+    "van-tag": "../dist/tag/index",
+    "i-load-more": "../../../iview/load-more/index"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "课程通知",
+  "navigationBarBackgroundColor": "#00c5bc"
+}

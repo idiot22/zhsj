@@ -1,0 +1,42 @@
+@import "../login/login.wxss";
+.shadow-warp {
+  position: relative;
+  box-shadow: 0 0  0rpx rgba(0, 0, 0, 0.1);
+}
+.padding
+{
+  padding: 20rpx
+}
+.padding2
+{
+  padding: 14rpx 20rpx;
+  
+}
+.font
+{
+  color:#333333
+}
+.margin-top-sm
+{
+ color:#333333
+}
+.text-xxl
+{
+  font-size:38rpx
+}
+.nickname
+{
+  color:#FFFFFF ;
+  text-align:center;
+  font-family: PingFang SC Medium;
+  font-size: 14px;
+}
+.cu-list.menu>.cu-item
+{
+  padding:0 16rpx
+}
+.text-mars
+{
+  font-size: 40rpx;
+  margin-right: 10rpx
+}

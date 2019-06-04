@@ -1,0 +1,25 @@
+ <view class='aa' style='justify-content:space-between'>
+ <view style='width:40px' class=' text-grey'>头像</view>
+ <!-- <image src="{{userInfo.avatarUrl}}"  style='width:130rpx;border-radius: 50%;height:130rpx;margin-top:30rpx;margin-left:270px'></image> -->
+ <image src="{{userInfo.avatarUrl}}"  style='width:130rpx;border-radius: 50%;height:130rpx;margin-top:30rpx'></image>
+ </view>
+ <wux-cell-group >
+     
+       
+            <wux-cell  title="姓名" extra="学生甲"></wux-cell>
+       
+                <wux-cell    title="性别" extra="女"></wux-cell>
+                     <wux-cell    title="生日" extra="2010-10-9"></wux-cell>
+        </wux-cell-group>
+        <view style='margin-top:20px'>
+         <wux-cell-group >
+            <wux-cell    title="学号" extra="160105xxxx"></wux-cell>
+            <wux-cell    title="班级" extra="五年4班"></wux-cell>
+        </wux-cell-group>
+        </view>
+        <view class='login-icon' bindtap='onTap'>
+
+   <view class='word'>
+  修改资料
+   </view>
+  </view>

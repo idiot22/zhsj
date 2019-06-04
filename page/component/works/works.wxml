@@ -1,0 +1,382 @@
+
+      <view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{mycourseXQ.courseImgUrl}}')">
+  <view class='padding-xl text-white'>
+    <view class='padding-xs text-xl' style="font-size:25px">
+    {{mycourseXQ.courseName}}
+    </view>
+  </view>
+</view>
+<view class='endjojn'>
+
+ 
+  <navigator class='add_symbol' url="../issue/issue?courseId={{mycourseXQ.courseId}}&subjectType={{mycourseXQ.subjectType}}" ></navigator>
+</view>
+<wux-sticky scrollTop="{{scrollTop}}">
+  <wux-sticky-item>
+
+    <view slot="title">
+      <scroll-view scroll-x class="bg-white nav" scroll-with-animation="{{true}}">
+        <view class='flex text-center '>
+          <view class="cu-item flex-sub {{index==TabCur?'text-mars cur':''}}" wx:for="{{course_tab}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+            {{item}}
+
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view slot="content">
+      <view class="course-content">
+        <view wx:if="{{TabCur === 1}}">
+        <!--作品内容循坏-->
+           <!--my数据的循坏-->
+            <view wx:for="{{my}}"wx:key>
+                  <view class="cu-card dynamic {{isCard?'no-card':''}}">
+                    <view  wx:key class="cu-item shadow" style='margin-top:40rpx'>
+                      <view class="cu-list menu menu-avatar">
+                        <view class="cu-item">
+                          <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+                          <view class='content flex-sub'>
+                            <view>{{item.someone}}</view>
+                            <view class='text-gray text-sm flex justify-between'>
+                              {{item.date}}
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+
+                      <view class='text-content'>
+                        <text class='title1'>{{item.work_title}}</text>
+
+                        <text class='fengefu1'></text> {{item.explain}}
+                      </view>
+                      <view class="grid {{isCard?'col-3 grid-square':'col-1'}} flex-sub padding-lr">
+                        <image class='contentimg2' src='{{item.work_img}}' bindtap="previewImage" data-src="{{item.work_img}}"></image>
+                      </view>
+                      <view class='text-gray text-sm text-right padding'>
+                  
+                        <i bindtap = "dianzan1"data-index="{{index}}" class="iconfont icon-praise margin-left-sm" style='font-size:20px' style="{{item.iszan1==1 ? 'color:orange':''}}"></i> {{item.zan}}
+                        <i bindtap = "delwork"class="iconfont icon-huishouzhan margin-left-sm" style='font-size:20px'></i> 
+
+                      </view>
+                      <view class="cu-list menu menu-avatar comment solids-top">
+                        <view class="cu-item" style='padding-left:0px'>
+                          <view class='content'>
+                            <view class=' text-content text-df wenzi'>
+                              作品评价：
+                              <view class='text-grey' style='margin-top:14rpx;color:#666666 '>{{item.comments}}</view>
+                            </view>
+                            <view class='margin-top-sm flex justify-between'>
+                              <view>
+
+                              </view>
+
+
+                            </view>
+                          </view>
+                        </view>
+
+                        <view class="cu-item" style='padding-left:0px'>
+                          <!-- <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+              <view>用户自定评价</view> -->
+                          <view class='content'>
+                            <!-- <view class='text-grey'>猪皮蛋</view> -->
+                            <view class=' text-content text-df wenzi'>
+                              用户自定义评价：
+                              <view style='margin-top:14rpx;color:#666666 '>{{item.self_coments}}</view>
+                            </view>
+                            <!-- <view class='bg-grey padding-sm radius margin-top-sm  text-sm' wx:if="{{index==1}}">
+
+                            </view> -->
+                            <view class='margin-top-sm flex justify-between'>
+                              <view>
+                              </view>
+
+
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+              
+            </view>
+          <!--/my数据的循坏-->
+          <!--实际数据循环-->
+                <view wx:for="{{workstype}}"wx:key>
+                  <view class="cu-card dynamic {{isCard?'no-card':''}}">
+                    <view  wx:key class="cu-item shadow" style='margin-top:40rpx'>
+                      <view class="cu-list menu menu-avatar">
+                        <view class="cu-item">
+                          <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+                          <view class='content flex-sub'>
+                            <view>{{item.studentName}}</view>
+                            <view class='text-gray text-sm flex justify-between'>
+                              {{item.buildTime}}
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+
+                      <view class='text-content'>
+                        <text class='title1'>{{item.postTitle}}</text>
+
+                        <text class='fengefu1'></text> {{item.postContent}}
+                      </view>
+                      <view class="grid {{isCard?'col-3 grid-square':'col-1'}} flex-sub padding-lr">
+                          <image 
+                            class='contentimg2' 
+                            src='{{rootPath+item.fileUrl}}' 
+                            wx:if="{{item.fileType =='.jpg'}}"
+                            bindtap="previewImage"
+                            data-src="{{rootPath+item.fileUrl}}">
+                          </image>
+                          <view id="audio" wx:else>
+                              <audio 
+                              controls        src="https://qcloudbbs-10019892.cos.ap-shanghai.myqcloud.com/%E6%99%AE%E9%80%9ADisco%20-%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%20_%20%E8%A8%80%E5%92%8C.mp3">                  </audio>
+                          </view>
+                      </view>
+                      <view class='text-gray text-sm text-right padding'>
+                  
+                        <i bindtap = "dianzan2"
+                        data-index="{{index}}"
+                        class="iconfont icon-praise margin-left-sm" 
+                        style='font-size:20px'
+                        style="{{iszan2==1 ? 'color:orange':''}}"></i> {{item.thumbUpNumbers}}
+                        <i bindtap = "delwork"class="iconfont icon-huishouzhan margin-left-sm" style='font-size:20px'></i> {{item.comments_num}}
+
+                      </view>
+                      <view class="cu-list menu menu-avatar comment solids-top">
+                        <view class="cu-item" style='padding-left:0px'>
+                          <!-- <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+              <view>用户自定评价</view> -->
+                          <view class='content'>
+                            <!-- <view class='text-grey'>猪皮蛋</view> -->
+                            <view class=' text-content text-df wenzi'>
+                              作品评价：
+                              <view 
+                                class='text-grey' 
+                                style='margin-top:14rpx;color:#666666 '> 
+                                {{item.commentContent == null ? '暂无评价' : item.commentContent}}
+                              </view>
+                            </view>
+                            <view class='margin-top-sm flex justify-between'>
+                              <view>
+                              </view>
+                            </view>
+                          </view>
+                        </view>
+
+                        <view class="cu-item" style='padding-left:0px'>
+                          <!-- <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+              <view>用户自定评价</view> -->
+                          <view class='content'>
+                            <!-- <view class='text-grey'>猪皮蛋</view> -->
+                            <view class=' text-content text-df wenzi'>
+                              用户自定义评价：
+                              <view style='margin-top:14rpx;color:#666666 '>{{item.commentContent == null ? '暂无评价' : item.commentContent}}</view>
+                            </view>
+                            <!-- <view class='bg-grey padding-sm radius margin-top-sm  text-sm' wx:if="{{index==1}}">
+
+                            </view> -->
+                            <view class='margin-top-sm flex justify-between'>
+                              <view>
+                              </view>
+
+
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+              
+            </view>
+          <!--/ 实际数据循环-->
+          <!--/作品内容循环-->
+        </view>
+
+        <view wx:if="{{TabCur === 2}}" >
+        <!--自己的数据-->
+          <view class="cu-card dynamic no-card" wx:for="{{my}}" wx:key  wx:if = "{{index<1}}">
+                <view  wx:key class="cu-item shadow" style='margin-top:40rpx'>
+
+
+                  <view class='text-content'>
+                    <text class='title1'>{{item.work_title}}</text>
+
+                    <text class='fengefu1'></text> {{item.explain}}
+                  </view>
+                  <view class="grid col-3 grid-square flex-sub padding-lr">
+                    <view 
+                    class="cu-avatar round lg" 
+                    bindtap="previewImage1" 
+                    data-src="http://img.zcool.cn/community/0142885afa4dd4a801216045a2977b.jpg@1280w_1l_2o_100sh.jpg"
+                    style="background-image:url(http://img.zcool.cn/community/0142885afa4dd4a801216045a2977b.jpg@1280w_1l_2o_100sh.jpg);"></view>
+                    <view 
+                    class="cu-avatar round lg" 
+                    bindtap="previewImage1" 
+                    data-src="http://img.zcool.cn/community/016ffc5afcd662a801218cf47f1d73.jpg@800w_1l_2o_100sh.jpg"
+                    style="background-image:url(http://img.zcool.cn/community/016ffc5afcd662a801218cf47f1d73.jpg@800w_1l_2o_100sh.jpg);"></view>
+                    <view 
+                    class="cu-avatar round lg" 
+                    bindtap="previewImage1" 
+                    data-src="http://img.zcool.cn/community/01aa445afadc3ea801207ab4eb90cc.jpg@1280w_1l_2o_100sh.jpg"
+                    style="background-image:url(http://img.zcool.cn/community/01aa445afadc3ea801207ab4eb90cc.jpg@1280w_1l_2o_100sh.jpg);"></view>
+
+                  </view>
+                  <view class='text-gray text-sm text-right padding' style='font-size:15px'>
+                  {{item.date}}
+                    
+                    <!-- <i bindtap="dianzan4"class="iconfont icon-praise margin-left-sm" style="{{}}"></i> 
+                    {{item.item.zan}} -->
+                    <i bindtap="delwork"class="iconfont icon-huishouzhan margin-left-sm" style='font-size:20px'></i>
+                  </view>
+                  <view class="cu-list menu menu-avatar comment solids-top">
+                    <view class="cu-item" style='padding-left:0px'>
+                      <view class='content'>
+                        <view class=' text-content text-df wenzi'>
+                          作品评价：
+                          <view class='text-grey' style='margin-top:14rpx;color:#666666 '>{{item.comments}}</view>
+                        </view>
+                        <view class='margin-top-sm flex justify-between'>
+                          <view class='text-gray text-df'>2018年12月4日</view>
+                          <view>
+
+                          </view>
+
+
+                        </view>
+                      </view>
+                    </view>
+
+                    <view class="cu-item" style='padding-left:0px'>
+                      <!-- <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+            <view>用户自定评价</view> -->
+                      <view class='content'>
+                        <!-- <view class='text-grey'>猪皮蛋</view> -->
+                        <view class=' text-content text-df wenzi'>
+                          用户自定义评价：
+                          <view style='margin-top:14rpx;color:#666666 '>{{item.self_coments}}</view>
+                        </view>
+                        <!-- <view class='bg-grey padding-sm radius margin-top-sm  text-sm' wx:if="{{index==1}}">
+
+                        </view> -->
+                        <view class='margin-top-sm flex justify-between'>
+                          <view class='text-gray text-df'>2018年12月4日</view>
+                          <view>
+
+                          </view>
+
+
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+          </view>
+          <!--/自己的数据-->
+          <!--实际数据-->
+            <view class="cu-card dynamic no-card" wx:for="{{applicationtype}}" wx:key>
+                <view  wx:key class="cu-item shadow" style='margin-top:40rpx'>
+                  <view class='text-content'>
+                    <text class='title1'>{{item.postTitle}}</text>
+
+                    <text class='fengefu1'></text> {{item.postContent}}
+                  </view>
+                    <view class="grid {{isCard?'col-3 grid-square':'col-1'}} flex-sub padding-lr">
+                        <image 
+                        class='contentimg2' 
+                        src='{{rootPath+item.fileUrl}}' 
+                        bindtap="previewImage" 
+                        data-src="{{rootPath+item.fileUrl}}"
+                        wx:if="{{item.fileType == '.jpg'}}">
+                        </image>
+                        <view wx:else >
+                          <audio controls        src="https://qcloudbbs-10019892.cos.ap-shanghai.myqcloud.com/%E6%99%AE%E9%80%9ADisco%20-%20%E6%B4%9B%E5%A4%A9%E4%BE%9D%20_%20%E8%A8%80%E5%92%8C.mp3">                  </audio>
+                        </view>
+                    </view>
+                  <view class='text-gray text-sm text-right padding' style='font-size:15px'>
+                  {{item.buildTime}}
+                    <i bindtap="dianzan3" data-index = "{{index}}" data-type = "applicationtype"
+                    class="iconfont icon-praise margin-left-sm"
+                    style="{{iszan3 == 1 ? 'color:orange':''}}"></i> 
+                    {{item.thumbUpNumbers}}
+                    <i bindtap="delwork"class="iconfont icon-huishouzhan margin-left-sm" style='font-size:20px'></i>
+                  </view>
+                  <view class="cu-list menu menu-avatar comment solids-top">
+                    <view class="cu-item" style='padding-left:0px'>
+                      <!-- <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+            <view>用户自定评价</view> -->
+                      <view class='content'>
+                        <!-- <view class='text-grey'>猪皮蛋</view> -->
+                        <view class=' text-content text-df wenzi'>
+                          作品评价：
+                          <view 
+                          class='text-grey' 
+                          style='margin-top:14rpx;color:#666666 '>{{item.commentContent == null ? '暂无评价' : item.commentContent}}</view>
+                        </view>
+                        <view class='margin-top-sm flex justify-between'>
+                          <view>
+
+                          </view>
+
+
+                        </view>
+                      </view>
+                    </view>
+
+                    <view class="cu-item" style='padding-left:0px'>
+                      <view class='content'>
+                        <view class=' text-content text-df wenzi'>
+                          用户自定义评价：
+                          <view style='margin-top:14rpx;color:#666666 '>{{item.commentContent == null ? '暂无评价' : item.commentContent}}</view>
+                        </view>
+                        <!-- <view class='bg-grey padding-sm radius margin-top-sm  text-sm' wx:if="{{index==1}}">
+
+                        </view> -->
+                        <view class='margin-top-sm flex justify-between'>
+                          <view>
+
+                          </view>
+
+
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+          </view>
+          <!--/实际数据-->
+        </view>
+
+
+        <view wx:if="{{TabCur === 0}}">
+              <view class='detail-text'>
+              <text class='text'>课程介绍</text>
+            <view class="divLine"></view>
+            <view class='article'>
+   <text space='nbsp' decode="{{true}}">{{mycourseXQ.subjectMission}}</text>
+             
+              
+            </view>
+            </view>
+<!-- 课程目标 -->
+            <view class='detail-text'>
+            
+              <text class='text'>课程目标</text>
+          
+            <view class="divLine"></view>
+            <view class='article' >
+ <text space='nbsp' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mycourseXQ.subjectTarget}}</text>
+             
+              
+            </view>
+            </view>
+        </view>
+
+      </view>
+      <!-- </scroll-view> -->
+    </view>
+
+  </wux-sticky-item>
+</wux-sticky>
