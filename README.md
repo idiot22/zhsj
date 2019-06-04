@@ -5,4 +5,3 @@
 部分界面的设计，界面代码化，绑定数据，做业务处理
 
 ## 界面截图
-![Image text](https://raw.githubusercontent.com/hongmaju/light7Local/master/img/productShow/20170518152848.png)
